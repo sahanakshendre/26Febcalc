@@ -21,6 +21,11 @@ class Calculator:
 
 
 def main():
+    
+  while True:
+    print("\nSimple Calculator")
+    print("Enter 'q' in operation to quit.")
+
     first_number = float(input("Enter the first number: "))
     operation = input("Enter the operation (+, -, *, /): ") 
     second_number = float(input("Enter the second number: "))
@@ -41,6 +46,10 @@ def main():
 
     else:
         result = "Error: Invalid operation."
+
+        elif calculator.operation.lower() == 'q':
+            print("Exiting the calculator. Goodbye!")
+            exit()
 
     print(f"Result: {result}")
 
