@@ -21,37 +21,35 @@ class Calculator:
 
 
 def main():
-    
-  while True:
-    print("\nSimple Calculator")
-    print("Enter 'q' in operation to quit.")
+    while True:
+        print("\nSimple Calculator")
+        print("Enter 'q' in operation to quit.")
+        first_number = float(input("Enter the first number: "))
+        operation = input("Enter the operation (+, -, *, /): ") 
+        second_number = float(input("Enter the second number: "))
 
-    first_number = float(input("Enter the first number: "))
-    operation = input("Enter the operation (+, -, *, /): ") 
-    second_number = float(input("Enter the second number: "))
+        calculator = Calculator(first_number, operation, second_number)
 
-    calculator = Calculator(first_number, operation, second_number)
+        if calculator.operation == '+':
+            result = calculator.add()
 
-    if calculator.operation == '+':
-        result = calculator.add()
+        elif calculator.operation == '-':
+            result = calculator.subtract()
 
-    elif calculator.operation == '-':
-        result = calculator.subtract()
+        elif calculator.operation == '*':
+            result = calculator.multiply()
 
-    elif calculator.operation == '*':
-        result = calculator.multiply()
-
-    elif calculator.operation == '/':
-        result = calculator.divide()
-
-    else:
-        result = "Error: Invalid operation."
+        elif calculator.operation == '/':
+            result = calculator.divide()
 
         elif calculator.operation.lower() == 'q':
             print("Exiting the calculator. Goodbye!")
             exit()
 
-    print(f"Result: {result}")
+        else:
+            result = "Error: Invalid operation."
+
+        print(f"Result: {result}")
 
 
 if __name__ == "__main__":    
